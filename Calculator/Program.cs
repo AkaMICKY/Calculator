@@ -14,6 +14,7 @@ namespace Calculator
             Console.WriteLine("Pick an Operation\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division");
             Console.Write("--Option: ");
             string choice = Console.ReadLine();
+            //Removes Incorrect Input
             if (int.TryParse(choice, out int CHOICE))
             {
                 if (CHOICE == 1)
@@ -28,7 +29,13 @@ namespace Calculator
                         {
                             double ADD = Add(A, B);
                             Console.WriteLine("The Sum of " + A + " and " + B + " is " + ADD);
+                        } else
+                        {
+                            Console.WriteLine("Invalid Number, Enter A correct Value(1,2,3,...)");
                         }
+                    } else
+                    {
+                        Console.WriteLine("Invalid Number, Enter a Correct Value(1,2,3,...)");
                     }
                 } else if (CHOICE == 2)
                 {
@@ -42,8 +49,14 @@ namespace Calculator
                         {
                             double SUB = Sub(Y, Z);
                             Console.WriteLine("The Subtraction of " + Y + " and " + Z + " is " + SUB);
+                        } else
+                        {
+                            Console.WriteLine("Invalid Number, Enter  a Correct Value(1,2,3,...)");
                         }
-                    }
+                    } else
+                    {
+                        Console.WriteLine("Inavild Number, Enter a Correct Number(1,2,3,...)");
+                    } 
                 } else if (CHOICE == 3)
                 {
                     Console.Write("Enter First Number: ");
@@ -57,6 +70,14 @@ namespace Calculator
                             double TIMES = Times(C, D);
                             Console.WriteLine("The Multipliation of " + C + " and " + D + " is " + TIMES);
                         }
+                        else
+                        {
+                            Console.WriteLine("Inavild Number, Enter a Correct Number(1,2,3,...)");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Inavild Number, Enter a Correct Number(1,2,3,...)");
                     }
                 } else if (CHOICE == 4)
                 {
@@ -68,11 +89,28 @@ namespace Calculator
                         string f = Console.ReadLine();
                         if (double.TryParse(f, out double F))
                         {
-                            double DIV = Div(E, F);
-                            Console.WriteLine("The Division of " + E + " and " + F + " is " + DIV);
+                            if (F == 0)
+                            {
+                                Console.WriteLine("Division by zero is undefined (infinity).");
+                            } else
+                            {
+                                double DIV = Div(E, F);
+                                Console.WriteLine("The Division of " + E + " and " + F + " is " + DIV);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Inavild Number, Enter a Correct Number(1,2,3,...)");
                         }
                     }
+                    else
+                    {
+                        Console.WriteLine("Inavild Number, Enter a Correct Number(1,2,3,...)");
+                    }
                 }
+            } else
+            {
+                Console.WriteLine(choice + " is  not an Option, Enter a Correct Option(1,2,3 or 4)");
             }
         }
 
