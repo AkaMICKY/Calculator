@@ -12,6 +12,7 @@ namespace Calculator
         {
             Console.WriteLine("Welcome to Calculator");
             Console.WriteLine("Pick an Operation\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division");
+            Console.Write("--Option: ");
             string choice = Console.ReadLine();
             if (int.TryParse(choice, out int CHOICE))
             {
@@ -19,81 +20,81 @@ namespace Calculator
                 {
                     Console.Write("Enter First Number: ");
                     string a = Console.ReadLine();
-                    if (int.TryParse(a, out int A))
+                    if (double.TryParse(a, out double A))
                     {
                         Console.Write("Enter Second Number: ");
                         string b = Console.ReadLine();
-                        if (int.TryParse(b, out int B))
+                        if (double.TryParse(b, out double B))
                         {
-                            int ADD = Add(A, B);
+                            double ADD = Add(A, B);
                             Console.WriteLine("The Sum of " + A + " and " + B + " is " + ADD);
                         }
                     }
                 } else if (CHOICE == 2)
                 {
                     Console.Write("Enter First Number: ");
-                    string a = Console.ReadLine();
-                    if (int.TryParse(a, out int A))
+                    string y = Console.ReadLine();
+                    if (double.TryParse(y, out double Y))
                     {
                         Console.Write("Enter Second Number: ");
-                        string b = Console.ReadLine();
-                        if (int.TryParse(b, out int B))
+                        string z = Console.ReadLine();
+                        if (double.TryParse(z, out double Z))
                         {
-                            int SUB = Sub(A, B);
-                            Console.WriteLine("The Subtraction of " + A + " and " + B + " is " + SUB);
+                            double SUB = Sub(Y, Z);
+                            Console.WriteLine("The Subtraction of " + Y + " and " + Z + " is " + SUB);
                         }
                     }
                 } else if (CHOICE == 3)
                 {
                     Console.Write("Enter First Number: ");
-                    string a = Console.ReadLine();
-                    if (int.TryParse(a, out int A))
+                    string c = Console.ReadLine();
+                    if (double.TryParse(c, out double C))
                     {
                         Console.Write("Enter Second Number: ");
-                        string b = Console.ReadLine();
-                        if (int.TryParse(b, out int B))
+                        string d = Console.ReadLine();
+                        if (double.TryParse(d, out double D))
                         {
-                            int TIMES = Times(A, B);
-                            Console.WriteLine("The Multipliation of " + A + " and " + B + " is " + TIMES);
+                            double TIMES = Times(C, D);
+                            Console.WriteLine("The Multipliation of " + C + " and " + D + " is " + TIMES);
                         }
                     }
                 } else if (CHOICE == 4)
                 {
                     Console.Write("Enter First Number: ");
-                    string a = Console.ReadLine();
-                    if (int.TryParse(a, out int A))
+                    string e = Console.ReadLine();
+                    if (double.TryParse(e, out double E))
                     {
                         Console.Write("Enter Second Number: ");
-                        string b = Console.ReadLine();
-                        if (int.TryParse(b, out int B))
+                        string f = Console.ReadLine();
+                        if (double.TryParse(f, out double F))
                         {
-                            int DIV = Div(A, B);
-                            Console.WriteLine("The Division of " + A + " and " + B + " is " + DIV);
+                            double DIV = Div(E, F);
+                            Console.WriteLine("The Division of " + E + " and " + F + " is " + DIV);
                         }
                     }
                 }
             }
         }
 
-        static int Add (int A, int B)
+        static double Add (double A, double B)
         {
            
-            int Addition = (A + B);
+            double Addition = (A + B);
             return Addition;
         }
 
-        static int Sub (int Y, int Z)
+        static double Sub (double Y, double Z)
         {
-            int Subtraction = Y - Z; return Subtraction;  
+            double Subtraction = Y - Z; return Subtraction;  
         }
-        static int Times ( int A,int B)
+        static double Times ( double A,double B)
         {
-            int Times = A * B;
+            double Times = A * B;
             return Times;
         }
-        static int Div (int A, int B)
+        static double Div (double A, double B)
         {
-            int Divition = A / B;
+            double Divition = A / B;
             return Divition;
         }
 
